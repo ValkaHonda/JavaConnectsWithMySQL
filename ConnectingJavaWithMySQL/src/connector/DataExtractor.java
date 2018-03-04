@@ -13,7 +13,8 @@ public class DataExtractor {
 	private static final String PASS = "pass";
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException{
+		Class.forName("com.mysql.jdbc.Driver");
 		try (Connection mySQLConnection = DriverManager.getConnection(URL,USER,PASS)){
 			
 			Statement statement = mySQLConnection.createStatement();
